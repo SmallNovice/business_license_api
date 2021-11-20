@@ -179,6 +179,9 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
+    tencentcloud-sdk-common (1.0.206)
+    tencentcloud-sdk-ocr (1.0.206)
+      tencentcloud-sdk-common (~> 1.0)
     thor (1.1.0)
     tilt (2.0.10)
     turbolinks (5.2.1)
@@ -225,6 +228,8 @@ DEPENDENCIES
   selenium-webdriver
   spring
   sqlite3 (~> 1.4)
+  tencentcloud-sdk-common
+  tencentcloud-sdk-ocr
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
