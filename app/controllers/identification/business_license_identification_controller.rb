@@ -5,9 +5,8 @@ class Identification::BusinessLicenseIdentificationController < ApplicationContr
   before_action :get_image_base64, :get_image_url
 
   def identify
-
     begin
-      cred = Credential.new(secretId, secretKey)
+      cred = Credential.new(ENV['SECRET_ID'], ENV['SECRET_KEY'])
 
       client = Client.new(cred, "ap-beijing")
 
@@ -19,21 +18,12 @@ class Identification::BusinessLicenseIdentificationController < ApplicationContr
 
       render :json => resp.serialize
     rescue TencentCloudSDKException => e
-      puts e.message
-      puts e.backtrace.inspect
+      e.message
+      e.backtrace.inspect
     end
-
   end
 
   private
-
-  def secretId
-    "AKIDueCXiqqgLqDOPFwSnwsb7RfolX6Tksqd"
-  end
-
-  def secretKey
-    "d5MRM6dy73pRs8FAsPjsukS0QfjiV9bs"
-  end
 
   def get_image_base64
     params[:get_image_base64]
