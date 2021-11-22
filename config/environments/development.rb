@@ -73,9 +73,4 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
-  config.before_configuration do
-    ENV['SECRET_ID'] = 'AKIDueCXiqqgLqDOPFwSnwsb7RfolX6Tksqd'
-    ENV['SECRET_KEY'] = 'd5MRM6dy73pRs8FAsPjsukS0QfjiV9bs'
-  end
-  config.hosts << "76tktp.natappfree.cc"
 end
