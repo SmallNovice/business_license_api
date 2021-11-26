@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  namespace :identification do
+    resources :business_license_identification do
+      post :identify, on: :collection
+    end
+  end
 end
